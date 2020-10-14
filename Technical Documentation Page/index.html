@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+     <title>SQL Fundamentals</title>
+
+     <!--Styles -->
+     <style>
+          html,
+          body {
+               min-width: 290px;
+               color: #4d4e53;
+               background-color: #ffffff;
+               font-family: 'Open Sans', Arial, sans-serif;
+               line-height: 1.5;
+          }
+
+          .caja {
+               background-color: black;
+               width: 50%;
+               padding: 20px 20px 20px 20px;
+               margin: 0 0 25px;
+               color: #ffffff;
+               border-radius: 15px;
+          }
+
+          .reserve-text {
+               color: #b3ccff;
+               font-family: monospace;
+               font-size: 15px;
+               font-weight: 400;
+          }
+
+          .bracket {
+               color: green;
+               font-weight: 600;
+          }
+
+          .property {
+               color: brown;
+               font-family: monospace;
+               font-size: 15px;
+               font-weight: 400;
+          }
+          .comment {
+               color:grey;
+          }
+
+          #navbar {
+               position: fixed;
+               min-width: 290px;
+               top: 0px;
+               left: 0px;
+               width: 300px;
+               height: 100%;
+               border-right: solid;
+               border-color: rgba(0, 22, 22, 0.4);
+          }
+
+          header {
+               color: black;
+               margin: 10px;
+               text-align: center;
+               font-size: 1.8em;
+               font-weight: thin;
+          }
+
+          #main-doc header {
+               text-align: left;
+               margin: 0px;
+          }
+
+          #navbar ul {
+               height: 88%;
+               padding: 0;
+               overflow-y: auto;
+               overflow-x: hidden;
+          }
+
+          #navbar li {
+               color: #4d4e53;
+               border-top: 1px solid;
+               list-style: none;
+               position: relative;
+               width: 100%;
+          }
+
+          #navbar a {
+               display: block;
+               padding: 10px 30px;
+               color: #4d4e53;
+               text-decoration: none;
+               cursor: pointer;
+          }
+
+          #main-doc {
+               position: absolute;
+               margin-left: 310px;
+               padding: 20px;
+               margin-bottom: 110px;
+          }
+
+          section article {
+               color: #4d4e53;
+               margin: 15px;
+               font-size: 0.96em;
+          }
+
+          section li {
+               margin: 15px 0px 0px 20px;
+          }
+
+          code {
+               padding: 0 0.25rem;
+               margin: 0 0.0625rem;
+               border-radius: 0.125rem;
+
+
+               white-space: normal;
+               vertical-align: baseline;
+
+               font-size: 0.9rem;
+          }
+
+          @media only screen and (max-width: 815px) {
+
+               /* For mobile phones: */
+               #navbar ul {
+                    border: 1px solid;
+                    height: 207px;
+               }
+
+               #navbar {
+                    background-color: white;
+                    position: absolute;
+                    top: 0;
+                    padding: 0;
+                    margin: 0;
+                    width: 100%;
+                    max-height: 275px;
+                    border: none;
+                    z-index: 1;
+                    border-bottom: 2px solid;
+               }
+
+               #main-doc {
+                    position: relative;
+                    margin-left: 0px;
+                    margin-top: 270px;
+               }
+          }
+
+          @media only screen and (max-width: 400px) {
+               #main-doc {
+                    margin-left: -10px;
+               }
+
+               code {
+                    margin-left: -20px;
+                    width: 100%;
+                    padding: 15px;
+                    padding-left: 10px;
+                    padding-right: 45px;
+                    min-width: 233px;
+               }
+          }
+     </style>
+
+     <!-- Required meta tags -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-=no">
+
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+     <nav id="navbar">
+          <header>SQL Fundamentals</header>
+          <ul>
+               <li>
+                    <a class="nav-link" href="#Introduccion">Introduccion</a>
+               </li>
+               <li>
+                    <a class="nav-link" href="#SQL_Manipulation">SQL Manipulation</a>
+               </li>
+               <li>
+                    <a class="nav-link" href="#SQL_Queries">SQL Queries</a>
+               </li>
+               <li>
+                    <a class="nav-link" href="#SQL_Aggregate_functions">SQL Aggregate functions</a>
+               </li>
+               <li>
+                    <a class="nav-link" href="#Multiple_tables">Multiple Tables</a>
+               </li>
+          </ul>
+     </nav>
+     <main id="main-doc">
+          <section class="main-section" id="Introduccion">
+               <header>Introduccion</header>
+               <article>
+                    <p>
+                         SQL tutorial gives unique learning on Structured Query Language and it helps to make practice
+                         on SQL
+                         commands which provides immediate results. SQL is a language of database, it includes database
+                         creation,
+                         deletion, fetching rows and modifying rows etc.
+                         SQL is an ANSI (American National Standards Institute) standard, but there are many different
+                         versions of the
+                         SQL language.
+                    </p>
+                    <p>
+                         What is SQL?
+                         SQL is Structured Query Language, which is a computer language for storing, manipulating and
+                         retrieving datastored in relational database.SQL is the standard language for Relation Database
+                         System. All relational database management systems like MySQL, MS Access, Oracle, Sybase,
+                         Informix, postgres and SQL Server use SQL as standard database language.
+                    </p>
+                    <p>
+                         Also, they are using different dialects, such as:
+                    </p>
+                    <ul>
+                         <li>MS SQL Server using T-SQL,</li>
+                         <li>Oracle using PL/SQL,</li>
+                         <li>MS Access version of SQL is called JET SQL (native format) etc.</li>
+                    </ul>
+                    <p>
+                         Why SQL?
+                    </p>
+                    <ul>
+                         <li>Allows users to access data in relational database management systems.</li>
+                         <li>Allows users to describe the data.</li>
+                         <li>Allows users to define the data in database and manipulate that data.</li>
+                         <li>Allows to embed within other languages using SQL modules, libraries & pre-compilers.</li>
+                         <li>Allows users to create and drop databases and tables.</li>
+                    </ul>
+
+               </article>
+          </section>
+          <section class="main-section" id="SQL_Manipulation">
+               <header>SQL Manipulation</header>
+               <article>
+                    <h3>Column Constraints</h3>
+                    <div class="caja"><span class="reserve-text">CREATE TABLE</span> student<span class="bracket">(</span>
+                         <br>&nbsp;&nbsp;id <span class="reserve-text">INTEGER</span> <span class="property">PRIMARY KEY</span>,
+                         <br>&nbsp;&nbsp;name <span class="reserve-text">TEXT</span> <span class="property"> UNIQUE</span>,
+                         <br>&nbsp;&nbsp;grade <span class="reserve-text">INTEGER</span> <span class="property">NOT</span> <span class="property">NULL</span>,
+                         <br>&nbsp;&nbsp;age <span class="reserve-text">INTEGER</span> DEFAULT 10
+                         <br>&nbsp; <span class="bracket">)</span>;
+                    </div>
+                    <p>Column constraints are the rules applied to the values of
+                         individual columns:</p>
+                    <p>There can be only one <code>PRIMARY KEY</code> column per table and multiple
+                         <code>UNIQUE</code> columns.</p>
+
+                    <ul>
+                         <li><code>PRIMARY KEY</code> constraint can be used to
+                              uniquely identify the row.</li>
+                         <li><code>UNIQUE</code>
+                              columns have a different value for every row.</li>
+                         <li><code>NOT NULL</code> columns must have a value.</li>
+                         <li><code>DEFAULT</code> assigns a default value for the
+                              column when no value is specified.</li>
+                    </ul>
+                    <p>There can be only one <code>PRIMARY KEY</code> column per table and multiple <code>UNIQUE</code>
+                         columns.</p>
+                    
+                    <h3>CREATE TABLE Statment</h3>
+                    <div class="caja"><span class="reserve-text">CREATE TABLE</span>  table_name <span class="bracket">(</span>
+                         <br>&nbsp;&nbsp;column1 <span class="reserve-text">datatype</span>,
+                         <br>&nbsp;&nbsp;column2 <span class="reserve-text">datatype</span>,
+                         <br>&nbsp;&nbsp;column3 <span class="reserve-text">datatype</span>
+                       <span class="bracket">)</span>;</div>
+                    <p>The <code>CREATE TABLE</code> statement creates a new table in a database. It allows one to
+                         specify the name of the table and the name of each column in the table.</p>
+                    
+                    <h3>INSERT Statement</h3>
+                         <div class="caja">
+                              <span class="comment">-- Insert into columns in order:</span><br>
+                              <span class="reserve-text">INSERT</span> <span class="reserve-text">INTO</span> table_name
+                              <span class="reserve-text">VALUES</span> <span class="brackets">(</span>value1, value2<span class="brackets">)</span>;
+                              <br><br>
+                              <span class="comment">-- Insert into columns by name:</span><br>
+                              <span class="reserve-text">INSERT</span> <!-- --><span class="reserve-text">INTO</span> table_name <span class="brackets">(</span>column1, column2<span class="brackets">)</span>
+                              <span class="reserve-text">VALUES</span> <span class="brackets">(</span>value1, value2<span class="brackets">)</span><span class="cm-punctuation">;</span>
+                         </div>
+                    <p>The <code>INSERT INTO</code> statement is used to add a new record (row) to a table. </p>
+                    <p>It has two forms as shown:</p>
+                    <ul>
+                         <li>Insert into columns in order.</li>
+                         <li>Insert into columns by name.</li>
+                    </ul>
+
+                    <h3>ALTER TABLE Statement</h3>
+                    <div class="caja"><span class="reserve-text">ALTER TABLE </span> table_name
+                         <span class="property">ADD</span> column_name <span class="reserve-text">datatype</span>;
+                    </div>
+                    <p>
+                         The <code>ALTER TABLE</code>statement is used to modify the columns of an existing table. When
+                         combined with the <code>ADD COLUMN</code>clause, it is used to add a new column.
+                    </p>
+
+                    <h3>DELETE Statement</h3>
+                    <div class="caja"><span class="reserve-text">DELETE FROM</span> table_name
+                         <br><span class="reserve-text">WHERE</span> some_column = some_value;
+                    </div>
+                    <p>The<code>DELETE</code>statement is used to delete records (rows) in a table.
+                         The<code>WHERE</code>clause specifies which record or records that should be deleted. If the
+                         <code>WHERE</code>clause is omitted, all records will be deleted.
+                    </p>
+
+                    <h3>UPDATE Statement</h3>
+                    <div class="caja"><span class="reserve-text">UPDATE</span> table_name
+                         <br><span class="reserve-text">SET</span> column1 = value1, column2 = value2
+                         <br><span class="reserve-text">WHERE</span> some_column = some_value;
+                    </div>
+                    <p>The<code>UPDATE</code>statement is used to edit records (rows) in a table. It includes
+                         a<code>SET</code>clause that indicates the column to edit and a<code>WHERE</code>clause for
+                         specifying the record(s).
+                    </p>
+               </article>
+          </section>
+          <section class="main-section" id="SQL_Queries">
+               <header>SQL Queries</header>
+               <article>
+                    <H3>AND Operators</H3>
+                    <div class="caja"><span class="reserve-text">SELECT</span> model<br>
+                         <span class="reserve-text">FROM</span> cars<br>
+                         <span class="reserve-text">WHERE</span> colors = <span class="string">'blue'</span><br>
+                         <span class="reserve-text">AND</span> year > <span style="color: orange;"> 2014</span> ;
+                    </div>
+                    <p>
+                         The <code>AND</code> operator allows multiple conditions to be combined. Records must match
+                         both conditions that are joined by <code>AND</code> to be included in the result set. The given
+                         query will match any car that is blue and made after 2014.
+                    </p>
+                    <h3>AS Clause</h3>
+                    <div class="caja"><span class="reserve-text">SELECT</span> name <span class="reserve-text">AS</span><span style="color:orange;"> 'movie_title'</span>
+                         <br><span class="reserve-text">FROM</span> movies;
+                    </div>
+                    <p>
+                         Columns or tables can be aliased using the <code>AS</code> clause. This allows columns or
+                         tables to be specifically renamed in the returned result set. The given query will return a
+                         result set with the column for <code>name</code> renamed to <code>movie_title</code>.
+                    </p>
+                    <h3>OR Operator</h3>
+                    <div class="caja"><span class="reserve-text">SELECT</span> name <span class="reserve-text">FROM</span> customers 
+                         <br><span class="reserve-text">WHERE</span> state = <span style ="color: orange;">'CA'</span> 
+                         <br><span class="reserve-text">OR</span> state = <span style ="color: orange;">'NY'</span>;
+                         
+                    </div>
+                    <p>
+                         The <code>OR</code>operator allows multiple conditions to be combined. Records matching either
+                         condition joined by the <code>OR</code> are included in the result set. The given query will
+                         match customers whose state is either <code>'CA'</code>or <code>'NY'</code>.
+                    </p>
+                    <h3>% Wildcard</h3>
+                    <div class="caja"><span class="reserve-text">SELECT</span> name 
+                         <br><span class="reserve-text">FROM</span> movies
+                         <br><span class="reserve-text">WHERE</span> name <span class="reserve-text">LIKE</span> <span style="color:orange;">'The%'</span>;
+                    </div>
+                    <p>
+                         The <code>%</code> wildcard can be used in a <code>LIKE</code>operator pattern to match zero or
+                         more unspecified character(s). The given query will match any movie that begins with The,
+                         followed by zero or more of any characters.
+                    </p>
+                    <h3>SELECT Statement</h3>
+                    <div class="caja"><span class="reserve-text">SELECT</span> *
+                         <br><span class="reserve-text">FROM</span> movies;
+                         </div>
+                    <p>
+                         The <code>SELECT *</code>  statement returns all columns from the provided table in the result set. The given query will fetch all columns and records (rows) from the <code>movies</code>  table.
+                    </p>
+               </article>
+          </section>
+          <section class="main-section" id="SQL_Aggregate_functions">
+               <header>SQL Aggregate functions</header>
+               <br>
+               <article>
+                    <h3>Column References</h3>
+                    <div class="caja"><span class="reserve-text">SELECT COUNT </span><span class="bracket">(</span> * <span class="bracket">)</span><span class="reserve-text"> AS </span> <span style="color: orange;">'total_movies'</span>, rating 
+                         <br><span class="reserve-text">FROM</span> movies <br>
+                         <span class="reserve-text">GROUP</span> <span class="reserve-text">BY</span> <span style="color: orange;">2</span> <br>
+                         <span class="reserve-text">ORDER</span> <span class="reserve-text">BY</span> <span style="color: orange;">1</span>;
+                         </div>
+                    <p>
+                         The <code>GROUP BY</code> and <code>ORDER BY</code> clauses can reference the selected columns by number in which they appear in the <code>SELECT</code>  statement. The example query will count the number of movies per rating, and will:
+                    </p>
+                    
+                    <ul>
+                         <li>
+                              <code>GROUP BY</code> column 2 (<code>rating</code> )
+                         </li>
+                         <li>
+                            <code>ORDER BY</code>column 1 (<code> total_movies</code>)
+                         </li>
+                    </ul>
+                    <h3>SUM() Function</h3>
+                    <div class="caja">
+                         <span class="reserve-text">SELECT </span> SUM <span class="bracket">(</span> salary <span class="bracket">)</span><br><span class="reserve-text">FROM </span> salary_disbursement ;
+                    </div>
+                    <p>
+                         The <code>SUM()</code>  aggregate function takes the name of a column as an argument and returns the sum of all the value in that column.
+                    </p>
+                    <h3>Having() Function</h3>
+                    <div class="caja">
+                         <span class="reserve-text">SELECT </span> year, <br>
+                         &nbsp;&nbsp;</span><span class="reserve-text">COUNT</span> <span class="bracket">(</span> * <span class="bracket">)</span><br><span class="reserve-text">FROM </span>movies <br>
+                         </span><span class="reserve-text">GROUP BY </span> year <br>
+                         <span class="reserve-text">HAVING COUNT</span> <span class="bracket">(</span> * <span class="bracket">)</span> > <span style="color: orange; ">5 </span>;
+                    </div>
+                    <p>
+                         The <code>HAVING</code>  clause is used to further filter the result set groups provided by the <code>GROUP BY</code> clause. <code>HAVING</code> is often used with aggregate functions to filter the result set groups based on an aggregate property. The given query will select only the records (rows) from only years where more than 5 movies were released per year.
+                    </p>
+               </article>
+          </section>
+          <section class="main-section" id="Multiple_tables">
+               <header>Multiple tables</header>
+               <article>
+                    <h3>Outer Join</h3>
+                    <div class="caja">
+                         <span class="reserve-text">SELECT </span> column_name <span class="bracket">(</span> s <span class="bracket">)</span><br>
+                         <span class="reserve-text">FROM </span> table1 <br>
+                         <span class="reserve-text">LEFT JOIN </span> table2
+                         &nbsp;&nbsp;<span class="reserve-text">ON</span> table1<span style="color: orange;">.column_name</span> = table2<span style="color: orange;">.column_name</span> ;
+                    </div>
+                    <p>
+                         An outer join will combine rows from different tables even if the join condition is not met. In a <code>LEFT JOIN</code> , every row in the left table is returned in the result set, and if the join condition is not met, then <code>NULL</code>  values are used to fill in the columns from the right table.
+                    </p>
+                    <h3>Outer Join</h3>
+                    <div class="caja">
+                         <span class="reserve-text">SELECT</span> *
+                         <br><span class="reserve-text">FROM</span> books
+                         <br><span class="reserve-text">JOIN</span> authors 
+                         <br><span class="reserve-text">ON</span> books<span style="color: orange;">.author_id</span> = author<span style="color: orange;">.id</span> ;
+                    </div>
+                    <p>
+                         The <code>JOIN</code>  clause allows for the return of results from more than one table by joining them together with other results based on common column values specified using an <code>ON</code> clause. <code>INNER JOIN</code>  is the default <code>JOIN</code>  and it will only return results matching the condition specified by ON.
+                    </p>
+                   
+               </article>
+          </section>
+     </main>
+
+
+     <!-- Optional JavaScript -->
+     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+          crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+          integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+          crossorigin="anonymous"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+          crossorigin="anonymous"></script>
+     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+
+</html>
